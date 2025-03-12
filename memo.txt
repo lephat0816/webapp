@@ -1,0 +1,52 @@
+
+{/* 特徴セクション */}
+const features = [
+    {
+        title: "サービス",
+        description: "ソフトウェア開発",
+        icon: <BusinessIcon fontSize="large" color="primary"/>
+    },
+    {
+        title: "特徴",
+        description: "当社の特徴",
+        icon: <StarIcon fontSize="large" color="primary"/>
+    }
+]
+
+
+
+<Container sx={homeStyles.features}>
+
+                    {/* グリッドレイアウト */}
+                    <Box sx={homeStyles.featureGrid}>
+                        {features.map((feature, index) => (
+                            <Box key={index} sx={homeStyles.feature}>
+                                <Box key={index} sx={homeStyles.feature}>
+                                    {/* アイコン */}
+                                    <Box sx={{mb: 2}}>
+                                        {feature.icon}
+                                    </Box>
+                                </Box>
+                                {/* タイトル */}
+                                <Typography variant="h3">
+                                    {feature.title}
+                                </Typography>
+                                {/* 説明 */}
+                                <Typography>
+                                    {feature.description}
+                                </Typography>
+                            </Box>
+                        ))}
+                    </Box>
+                    
+                    {/* お問い合わせボタン */}
+                    <Button
+                        component={Link}
+                        to="/contact"
+                        variant="contained"
+                        sx={homeStyles.button}
+                        size="large"
+                    >
+                        お問い合わせ
+                    </Button>
+                </Container>
